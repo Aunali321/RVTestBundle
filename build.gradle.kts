@@ -5,7 +5,7 @@ plugins {
     `maven-publish`
 }
 
-group = "your.org"
+group = "li.auna"
 
 repositories {
     mavenCentral()
@@ -21,7 +21,7 @@ dependencies {
     implementation(libs.guava)
     // Used in JsonGenerator.
     implementation(libs.gson)
-
+    implementation("app.revanced:revanced-patches:v3.0.0-dev.7")
     // A dependency to the Android library unfortunately fails the build, which is why this is required.
     compileOnly(project("dummy"))
 }
@@ -32,14 +32,14 @@ kotlin {
 
 tasks.withType(Jar::class) {
     manifest {
-        attributes["Name"] = "Your Patches"
-        attributes["Description"] = "Patches for ReVanced."
+        attributes["Name"] = "RVTestBundle"
+        attributes["Description"] = "Test Patch Bundle for ReVanced."
         attributes["Version"] = version
         attributes["Timestamp"] = System.currentTimeMillis().toString()
-        attributes["Source"] = "git@github.com:you/revanced-patches.git"
-        attributes["Author"] = "You"
-        attributes["Contact"] = "contact@your.homepage"
-        attributes["Origin"] = "https://your.homepage"
+        attributes["Source"] = "git@github.com:Aunali321/RVTestBundle.git"
+        attributes["Author"] = "Aunali321"
+        attributes["Contact"] = "hello@auna.li"
+        attributes["Origin"] = "https://auna.li"
         attributes["License"] = "GNU General Public License v3.0"
     }
 }
@@ -82,9 +82,9 @@ publishing {
             from(components["java"])
 
             pom {
-                name = "Your Patches"
-                description = "Patches for ReVanced."
-                url = "https://your.homepage"
+                name = "RVTestBundle"
+                description = "Test Patch Bundle for ReVanced."
+                url = "https://auna.li"
 
                 licenses {
                     license {
@@ -94,15 +94,15 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = "Your ID"
-                        name = "Your Name"
-                        email = "contact@your.homepage"
+                        id = "Aunali321"
+                        name = "Aunali321"
+                        email = "hello@auna.li"
                     }
                 }
                 scm {
-                    connection = "scm:git:git://github.com/you/revanced-patches.git"
-                    developerConnection = "scm:git:git@github.com:you/revanced-patches.git"
-                    url = "https://github.com/you/revanced-patches"
+                    connection = "scm:git:git://github.com/Aunali321/RVTestBundle.git"
+                    developerConnection = "scm:git:git@github.com:Aunali321/RVTestBundle.git"
+                    url = "https://github.com/Aunali321/RVTestBundle"
                 }
             }
         }
